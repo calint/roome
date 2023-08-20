@@ -3,10 +3,10 @@
         {
             "type": "cppbuild",
             "label": "build roome",
-            "command": "/usr/bin/g++",
+            "command": "/usr/bin/gcc",
             "args": [
                 "-fdiagnostics-color=always",
-                "-fno-rtti",
+                //"-fno-rtti",
                 "-fno-exceptions",
                 "-Wfatal-errors",
                 "-pedantic",
@@ -18,10 +18,10 @@
                 "-Wcast-qual",
                 "-Wshadow",
                 "-Wsign-conversion",
-                "-Wsign-promo",
+                //"-Wsign-promo",
                 "-Wno-unused-parameter",
                 "-g",
-                "roome.cpp",
+                "roome.c",
                 "-o",
                 "roome"
             ],
