@@ -6,13 +6,27 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
+                "-fno-rtti",
+                "-fno-exceptions",
+                "-Wfatal-errors",
+                "-pedantic",
+                "-pedantic-errors",
+                "-Wall",
+                "-Wextra",
+                "-Wconversion",
+                "-Wcast-align",
+                "-Wcast-qual",
+                "-Wshadow",
+                "-Wsign-conversion",
+                "-Wsign-promo",
+                "-Wno-unused-parameter",
                 "-g",
-                "${file}",
+                "roome.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "roome"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"

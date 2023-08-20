@@ -398,7 +398,7 @@ void print_help() {
 
 void input(input_buffer *buf) {
   fgets(buf->line, sizeof(buf->line), stdin);
-  const unsigned len = strlen(buf->line);
+  const size_t len = strlen(buf->line);
   if (buf->line[len - 1] == '\n') {
     buf->line[len - 1] = '\0';
   }
