@@ -20,10 +20,11 @@
                 "-Wsign-conversion",
                 //"-Wsign-promo",
                 "-Wno-unused-parameter",
+                "-Wno-unused-result",
                 "-g",
-                "roome.c",
                 "-o",
-                "roome"
+                "roome",
+                "roome.c"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

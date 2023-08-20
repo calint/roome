@@ -61,9 +61,11 @@ static const char *exit_names[] = {"north", "east", "south",
 
 void print_help();
 void print_location(location_id_t lid, entity_id_t eid_exclude_from_output);
-bool_t add_object_to_list(object_id_t list[], unsigned list_len, object_id_t oid);
+bool_t add_object_to_list(object_id_t list[], unsigned list_len,
+                          object_id_t oid);
 void remove_object_from_list_by_index(object_id_t list[], unsigned ix);
-bool_t add_entity_to_list(entity_id_t list[], unsigned list_len, entity_id_t eid);
+bool_t add_entity_to_list(entity_id_t list[], unsigned list_len,
+                          entity_id_t eid);
 void remove_entity_from_list_by_index(entity_id_t list[], unsigned ix);
 void remove_entity_from_list(entity_id_t list[], unsigned list_len,
                              entity_id_t eid);
@@ -252,7 +254,7 @@ void remove_object_from_list_by_index(object_id_t list[], unsigned ix) {
 }
 
 bool_t add_object_to_list(object_id_t list[], unsigned list_len,
-                        object_id_t oid) {
+                          object_id_t oid) {
   // list_len - 1 since last element has to be 0
   for (unsigned i = 0; i < list_len - 1; i++) {
     if (list[i])
@@ -266,7 +268,7 @@ bool_t add_object_to_list(object_id_t list[], unsigned list_len,
 }
 
 bool_t add_entity_to_list(entity_id_t list[], unsigned list_len,
-                        entity_id_t eid) {
+                          entity_id_t eid) {
   // list_len - 1 since last element has to be 0
   for (unsigned i = 0; i < list_len - 1; i++) {
     if (list[i])
