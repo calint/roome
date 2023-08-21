@@ -399,14 +399,6 @@ void print_help() {
       "message\r\n\r\n");
 }
 
-void input(input_buffer *buf) {
-  fgets(buf->line, sizeof(buf->line), stdin);
-  const size_t len = strlen(buf->line);
-  if (buf->line[len - 1] == '\n') {
-    buf->line[len - 1] = '\0';
-  }
-}
-
 bool_t strings_equal(const char *s1, const char *s2) {
   while (1) {
     if (*s1 - *s2)
@@ -417,8 +409,6 @@ bool_t strings_equal(const char *s1, const char *s2) {
     s2++;
   }
 }
-
-void uart_send_str(const char *str) { printf("%s", str); }
 
 void uart_send_hex_byte(char ch) {
   uart_send_hex_nibble((ch & 0xf0) >> 4);
@@ -432,6 +422,16 @@ void uart_send_hex_nibble(char nibble) {
     uart_send_char('A' + (nibble - 10));
   }
 }
+
+void input(input_buffer *buf) {
+  fgets(buf->line, sizeof(buf->line), stdin);
+  const size_t len = strlen(buf->line);
+  if (buf->line[len - 1] == '\n') {
+    buf->line[len - 1] = '\0';
+  }
+}
+
+void uart_send_str(const char *str) { printf("%s", str); }
 
 void uart_send_char(char ch) { putchar(ch); }
 
