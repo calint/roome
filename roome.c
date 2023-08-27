@@ -79,7 +79,7 @@ void handle_input(entity_id_t eid, input_buffer *buf);
 bool_t strings_equal(const char *s1, const char *s2);
 
 void run() {
-  unsigned char active_entity = 1;
+  entity_id_t active_entity = 1;
   input_buffer inbuf;
   inbuf.ix = 0;
 
