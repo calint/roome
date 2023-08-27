@@ -1,0 +1,5 @@
+[ ] optimize add_object_to_list by keeping track of where last element is
+[ ] optimized remove where keeping the order in list is not relevant
+    [ ] at remove move last element to the newly created empty slot
+[ ] linked list of "slices" that contain n number of slots
+
