@@ -33,6 +33,7 @@ typedef struct object {
   name_t name;
 } object;
 
+// first element is empty since id 0 is terminator in lists
 static object objects[] = {{""}, {"notebook"}, {"mirror"}, {"lighter"}};
 
 typedef struct entity {
@@ -41,6 +42,7 @@ typedef struct entity {
   object_id_t objects[ENTITY_MAX_OBJECTS];
 } entity;
 
+// first element is empty since id 0 is terminator in lists
 static entity entities[] = {{"", 0, {0}}, {"me", 1, {2}}, {"u", 2, {0}}};
 
 typedef struct location {
@@ -50,6 +52,7 @@ typedef struct location {
   location_id_t exits[LOCATION_MAX_EXITS];
 } location;
 
+// first element is empty since id 0 is terminator in lists
 static location locations[] = {{"", {0}, {0}, {0}},
                                {"roome", {0}, {1}, {2, 3, 0, 4}},
                                {"office", {1, 3}, {2}, {0, 0, 1}},
@@ -253,6 +256,7 @@ void remove_object_from_list_by_index(object_id_t list[], unsigned ix) {
   }
 }
 
+// ! make to O(1) instead of O(n)
 bool_t add_object_to_list(object_id_t list[], unsigned list_len,
                           object_id_t oid) {
   // list_len - 1 since last element has to be 0
@@ -267,6 +271,7 @@ bool_t add_object_to_list(object_id_t list[], unsigned list_len,
   return FALSE;
 }
 
+// ! make to O(1) instead of O(n)
 bool_t add_entity_to_list(entity_id_t list[], unsigned list_len,
                           entity_id_t eid) {
   // list_len - 1 since last element has to be 0
